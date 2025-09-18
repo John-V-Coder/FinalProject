@@ -1,127 +1,225 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Seedling Supply System Services{% endblock title %}
+{% block title %}About Us | Green Future Society{% endblock title %}
 
-{% block content %}
-<div class="container py-5">
-  <div class="card bg-dark text-light border-success shadow-lg rounded-4 p-4">
-    <div class="text-center mb-4">
-      <h1 class="fw-bold text-success">Seedling Supply Services in Kenya</h1>
-      <p class="lead">Empowering farmers with quality seedlings and sustainable practices</p>
-    </div>
-{% endblock content %}
+{% block hero %}
+<section class="hero-container">
+  <!-- Background Image -->
+  <div class="hero-background">
+    <img
+      src="{% static 'assets/img/about_us_hero.jpg' %}"
+      alt="Green Future Society promoting sustainable agriculture and forestry in Kenya"
+      class="hero-image"
+    />
+    <div class="hero-overlay"></div>
+  </div>
 
-{% block body %}
-<section class="pb-5">
-  <div class="container">
-    <h2 class="mb-5 text-center text-success">Our Core Objectives</h2>
+  <!-- Floating Particles -->
+  <div class="floating-particles">
+    <!-- You can dynamically add particles using JS if needed -->
+    {% for _ in particle_range %}
+    <div class="particle"></div>
+    {% endfor %}
+  </div>
 
-    <!-- Objective 1 -->
-    <div class="card bg-dark text-light mb-5 shadow-lg border-success rounded-4 p-4">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <img src="{% static 'assets/img/variety_seedlings.png' %}" class="img-fluid rounded shadow" alt="Variety of seedlings">
-        </div>
-        <div class="col-md-6">
-          <h4 class="text-success">🌱 Increasing the Variety of Seedlings Available</h4>
-          <p>
-            We offer a wide range of seedling varieties including hybrids bred for pest and disease resistance, drought tolerance, and high yield potential.
-          </p>
+  <!-- Main Content -->
+  <div class="hero-content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+          <div class="hero-text">
+            <br />
+            <br />
+            <br />
+            <h1 class="hero-title animate-fade-up">G.F.S</h1>
+            <div class="cta-container animate-fade-up-delay-2">
+              <a href="/" class="btn-secondary-custom" aria-label="Discover More about Our Services">
+                <i class="fas fa-play-circle"></i> Home
+              </a>
+              <a href="/service" class="btn-primary-custom" aria-label="Start Your Green Journey">
+                <i class="fas fa-leaf"></i> About Us
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Objective 2 -->
-    <div class="card bg-dark text-light mb-5 shadow-lg border-success rounded-4 p-4">
-      <div class="row align-items-center flex-md-row-reverse">
-        <div class="col-md-6">
-          <img src="{% static 'assets/img/distribution.png' %}" class="img-fluid rounded shadow" alt="Efficient distribution">
-        </div>
-        <div class="col-md-6">
-          <h4 class="text-success">🚚 Developing Efficient Distribution Channels</h4>
-          <p>
-            We’ve established a reliable network of local distributors to ensure timely and affordable delivery of seedlings to farmers.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Objective 3 -->
-    <div class="card bg-dark text-light mb-5 shadow-lg border-success rounded-4 p-4">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <img src="{% static 'assets/img/training.png' %}" class="img-fluid rounded shadow" alt="Farmer training">
-        </div>
-        <div class="col-md-6">
-          <h4 class="text-success">📘 Providing Training and Information</h4>
-          <p>
-            Farmers receive comprehensive training on seedling selection, planting techniques, pest control, and disease management to boost productivity.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Objective 4 -->
-    <div class="card bg-dark text-light mb-5 shadow-lg border-success rounded-4 p-4">
-      <div class="row align-items-center flex-md-row-reverse">
-        <div class="col-md-6">
-          <img src="{% static 'assets/img/availability.png' %}" class="img-fluid rounded shadow" alt="Availability">
-        </div>
-        <div class="col-md-6">
-          <h4 class="text-success">📅 Ensuring Availability Throughout the Planting Season</h4>
-          <p>
-            We guarantee continuous access to seedlings across the entire planting season to help farmers maximize yield.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Objective 5 -->
-    <div class="card bg-dark text-light mb-5 shadow-lg border-success rounded-4 p-4">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <img src="{% static 'assets/img/eco_practices.png' %}" class="img-fluid rounded shadow" alt="Eco practices">
-        </div>
-        <div class="col-md-6">
-          <h4 class="text-success">♻️ Encouraging Environmentally Sustainable Practices</h4>
-          <p>
-            We advocate for eco-friendly agriculture through the use of organic fertilizers and natural pest management methods.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Objective 6 -->
-    <div class="card bg-dark text-light mb-5 shadow-lg border-success rounded-4 p-4">
-      <div class="row align-items-center flex-md-row-reverse">
-        <div class="col-md-6">
-          <img src="{% static 'assets/img/nursery_capacity.png' %}" class="img-fluid rounded shadow" alt="Nursery support">
-        </div>
-        <div class="col-md-6">
-          <h4 class="text-success">🏡 Building Capacity of Small-Scale Nurseries</h4>
-          <p>
-            We support local nurseries with tools, training, and funding to enhance the quality and scale of their seedling production.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Objective 7 -->
-    <div class="card bg-dark text-light mb-5 shadow-lg border-success rounded-4 p-4">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <img src="{% static 'assets/img/reforestation.png' %}" class="img-fluid rounded shadow" alt="Reforestation">
-        </div>
-        <div class="col-md-6">
-          <h4 class="text-success">🌳 Promoting Reforestation and Soil Conservation</h4>
-          <p>
-            We promote seedlings for reforestation and soil protection to fight deforestation and improve long-term agricultural sustainability.
-          </p>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
-{% endblock body %}
+
+<!-- About Us Main Content -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4 text-success">Who We Are</h2>
+        <p>Green Future Society is a national non-governmental organization formed in October 2015 and registered in March 2016 under the Registration of Societies Act of 2005. Headquartered in Kisumu, Kenya, our reach extends across the Western Kenya region.</p>
+        <p>We focus on promoting tree planting, protection, and sustainable agricultural practices to mitigate the effects of climate change and foster food security for present and future generations.</p>
+      </div>
+      <div class="col-lg-6">
+        <img src="{% static 'assets/img/hero-image.png' %}" alt="About Green Future Society" class="img-fluid rounded-4 shadow">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vision, Mission, Goal, Objectives -->
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <!-- Vision -->
+    <div class="row mb-5 align-items-center">
+      <div class="col-md-6">
+        <img src="{% static 'assets/img/vision.jpg' %}" alt="Vision" class="img-fluid rounded-4 shadow" />
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-success fw-bold">Our Vision</h3>
+        <p class="lead">Offering strategic economic base for sustainable livelihood.</p>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="row mb-5 align-items-center flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="{% static 'assets/img/mission.jpg' %}" alt="Mission" class="img-fluid rounded-4 shadow" />
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-success fw-bold">Our Mission</h3>
+        <p class="lead">
+          Increasing tree cover to mitigate climate change and foster community development by using waste lands, hill tops and on-farm agro-forestry through community awareness and education. We support government to achieve at least 10% forest cover by 2030.
+        </p>
+      </div>
+    </div>
+
+    <!-- Goal -->
+    <div class="row mb-5 align-items-center">
+      <div class="col-md-6">
+        <img src="{% static 'assets/img/goal.jpg' %}" alt="Goal" class="img-fluid rounded-4 shadow" />
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-success fw-bold">Our Goal</h3>
+        <p class="lead">To contribute towards alleviating climate change and ensuring economic stability.</p>
+      </div>
+    </div>
+
+<!-- Our Team -->
+<div class="text-center mt-5">
+  <h3 class="text-success fw-bold">Our Team</h3>
+  <p class="lead">Meet the passionate individuals driving our mission forward.</p>
+</div>
+
+<div class="row g-4 mt-4 justify-content-center">
+  <!-- Team Member 1 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card border-0 shadow rounded-4 h-100">
+      <img src="{% static 'images/team_member1.jpg' %}" class="card-img-top rounded-top-4" alt="Jane Mwangi">
+      <div class="card-body text-center">
+        <h5 class="text-success fw-bold">Jane Mwangi</h5>
+        <p class="text-muted">Project Coordinator</p>
+        <a href="#" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Member 2 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card border-0 shadow rounded-4 h-100">
+      <img src="{% static 'images/team_member2.jpg' %}" class="card-img-top rounded-top-4" alt="David Otieno">
+      <div class="card-body text-center">
+        <h5 class="text-success fw-bold">David Otieno</h5>
+        <p class="text-muted">Environmental Officer</p>
+        <a href="#" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Member 3 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card border-0 shadow rounded-4 h-100">
+      <img src="{% static 'images/team_member3.jpg' %}" class="card-img-top rounded-top-4" alt="Lucy Wanjiru">
+      <div class="card-body text-center">
+        <h5 class="text-success fw-bold">Lucy Wanjiru</h5>
+        <p class="text-muted">Education & Outreach Lead</p>
+        <a href="#" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Member 4 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card border-0 shadow rounded-4 h-100">
+      <img src="{% static 'images/team_member4.jpg' %}" class="card-img-top rounded-top-4" alt="Peter Njoroge">
+      <div class="card-body text-center">
+        <h5 class="text-success fw-bold">Peter Njoroge</h5>
+        <p class="text-muted">Forestry Specialist</p>
+        <a href="#" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Member 5 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card border-0 shadow rounded-4 h-100">
+      <img src="{% static 'images/team_member5.jpg' %}" class="card-img-top rounded-top-4" alt="Grace Achieng">
+      <div class="card-body text-center">
+        <h5 class="text-success fw-bold">Grace Achieng</h5>
+        <p class="text-muted">Agroforestry Advisor</p>
+        <a href="#" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Member 6 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card border-0 shadow rounded-4 h-100">
+      <img src="{% static 'images/team_member6.jpg' %}" class="card-img-top rounded-top-4" alt="Samuel Kiptoo">
+      <div class="card-body text-center">
+        <h5 class="text-success fw-bold">Samuel Kiptoo</h5>
+        <p class="text-muted">Community Liaison</p>
+        <a href="#" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Partners -->
+<div class="container py-5">
+  <h1 class="text-success text-center mb-4">Partners</h1>
+ <p class="lead text-dark text-center mb-5">
+  We proudly collaborate with these organizations that support our mission.
+</p>
+
+  <!-- Partner Logos Scrolling -->
+  <div class="partner-logos-container">
+    <div class="partner-logos">
+      <img src="{% static 'assets/img/partner1_logo.png' %}" alt="Partner 1">
+      <img src="{% static 'assets/img/partner2_logo.png' %}" alt="Partner 2">
+      <img src="{% static 'assets/img/partner3_logo.png' %}" alt="Partner 3">
+      <img src="{% static 'assets/img/partner4_logo.png' %}" alt="Partner 4">
+      <!-- Repeat for smooth loop -->
+      <img src="{% static 'assets/img/partner1_logo.png' %}" alt="Partner 1">
+      <img src="{% static 'assets/img/partner2_logo.png' %}" alt="Partner 2">
+      <img src="{% static 'assets/img/partner3_logo.png' %}" alt="Partner 3">
+      <img src="{% static 'assets/img/partner4_logo.png' %}" alt="Partner 4">
+    </div>
+  </div>
+</div>
+
+  <div class="text-center">
+    <a href="/donate" class="btn btn-success rounded-pill px-4 me-3 mb-2">
+      Support Us
+    </a>
+    <a href="/contact" class="btn btn-outline-success rounded-pill px-4 mb-2">
+      Partner With Us Today
+    </a>
+  </div>
+</div>
+
+{% endblock %}
