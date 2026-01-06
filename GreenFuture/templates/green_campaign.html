@@ -577,11 +577,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     🎯 ${county} County
                 </h4>
                 <div style="background: #fff3f3; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
-                    <strong>🌲 Tree Coverage:</strong> ${missionData.treeCover}%<br>
-                    <strong>🌳 Forest Cover:</strong> ${typeof missionData.forestCover === 'number' ? missionData.forestCover + '%' : missionData.forestCover}<br>
-                    <strong>🎯 Target:</strong> ${missionData.target}%<br>
-                    <strong>📍 Region:</strong> ${missionData.region}<br>
-                    <strong>⚠️ Priority:</strong> <span style="color: ${missionData.priority === 'critical' ? '#8B0000' : '#FF4500'}; font-weight: bold; text-transform: uppercase;">${missionData.priority}</span>
+                    <strong>Tree Coverage:</strong> ${missionData.treeCover}%<br>
+                    <strong>Forest Cover:</strong> ${typeof missionData.forestCover === 'number' ? missionData.forestCover + '%' : missionData.forestCover}<br>
+                    <strong>Target:</strong> ${missionData.target}%<br>
+                    <strong> Region:</strong> ${missionData.region}<br>
+                    <strong>Priority:</strong> <span style="color: ${missionData.priority === 'critical' ? '#8B0000' : '#FF4500'}; font-weight: bold; text-transform: uppercase;">${missionData.priority}</span>
                 </div>
                 <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; border-left: 4px solid #8B0000;">
                     <strong>Why It Needs More Trees:</strong><br>
@@ -597,9 +597,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h4 style="color: #28a745; margin: 0 0 10px 0;">
                     ${county} County
                 </h4>
-                <strong>🌳 Tree Cover:</strong> ${otherData.treeCover}%<br>
-                <strong>🎯 Target:</strong> ${otherData.target}%<br>
-                <strong>📈 Gap to Target:</strong> ${otherData.target - otherData.treeCover}%
+                <strong>Tree Cover:</strong> ${otherData.treeCover}%<br>
+                <strong>Target:</strong> ${otherData.target}%<br>
+                <strong>Gap to Target:</strong> ${otherData.target - otherData.treeCover}%
             `;
         } else {
             popupContent += `
@@ -690,14 +690,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <h4 style="margin: 0 0 10px 0; color: #333;">Tree Cover & Mission Priority</h4>
             
             <div style="margin-bottom: 10px;">
-                <strong>🎯 Mission Counties:</strong><br>
+                <strong> Mission Counties:</strong><br>
                 <i style="background: #8B0000; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> Critical Priority (0-5%)<br>
                 <i style="background: #FF4500; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> High Priority (5-9%)<br>
                 <i style="background: #FF8C00; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> Medium Priority (6-7%)<br>
             </div>
             
             <div>
-                <strong>🌳 Other Counties:</strong><br>
+                <strong>Other Counties:</strong><br>
                 <i style="background: #006400; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> 20%+ Tree Cover<br>
                 <i style="background: #66bb66; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> 10-20% Tree Cover<br>
                 <i style="background: #c2e699; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> 5-10% Tree Cover<br>

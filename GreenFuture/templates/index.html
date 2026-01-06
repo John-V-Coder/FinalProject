@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Home | Green Future Society{% endblock %}
+{% block title %}Green Future Society{% endblock %}
 
 <!-- HERO SECTION WITH UNIQUE STYLING -->
 {% block hero %}
@@ -432,6 +432,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     osm.addTo(map); // default
+    setTimeout(function(){ try { map.invalidateSize(); } catch(e) {} }, 300);
 
     // Mission-critical counties with detailed data
     var missionCounties = {
@@ -564,21 +565,21 @@ document.addEventListener("DOMContentLoaded", function () {
             // Enhanced popup for mission counties
             popupContent += `
                 <h4 style="color: #8B0000; margin: 0 0 10px 0; border-bottom: 2px solid #8B0000; padding-bottom: 5px;">
-                    🎯 ${county} County
+                    ${county} County
                 </h4>
                 <div style="background: #fff3f3; padding: 10px; border-radius: 5px; margin-bottom: 10px;">
-                    <strong>🌲 Tree Coverage:</strong> ${missionData.treeCover}%<br>
-                    <strong>🌳 Forest Cover:</strong> ${typeof missionData.forestCover === 'number' ? missionData.forestCover + '%' : missionData.forestCover}<br>
-                    <strong>🎯 Target:</strong> ${missionData.target}%<br>
-                    <strong>📍 Region:</strong> ${missionData.region}<br>
-                    <strong>⚠️ Priority:</strong> <span style="color: ${missionData.priority === 'critical' ? '#8B0000' : '#FF4500'}; font-weight: bold; text-transform: uppercase;">${missionData.priority}</span>
+                    <strong>Tree Coverage:</strong> ${missionData.treeCover}%<br>
+                    <strong>Forest Cover:</strong> ${typeof missionData.forestCover === 'number' ? missionData.forestCover + '%' : missionData.forestCover}<br>
+                    <strong>Target:</strong> ${missionData.target}%<br>
+                    <strong>Region:</strong> ${missionData.region}<br>
+                    <strong>Priority:</strong> <span style="color: ${missionData.priority === 'critical' ? '#8B0000' : '#FF4500'}; font-weight: bold; text-transform: uppercase;">${missionData.priority}</span>
                 </div>
                 <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; border-left: 4px solid #8B0000;">
                     <strong>Why It Needs More Trees:</strong><br>
                     <em>${missionData.reason}</em>
                 </div>
                 <div style="margin-top: 10px; text-align: center;">
-                    <small style="color: #666;">🌱 Mission Priority County</small>
+                    <small style="color: #666;"> Mission Priority County</small>
                 </div>
             `;
         } else if (otherData) {
@@ -587,9 +588,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h4 style="color: #28a745; margin: 0 0 10px 0;">
                     ${county} County
                 </h4>
-                <strong>🌳 Tree Cover:</strong> ${otherData.treeCover}%<br>
-                <strong>🎯 Target:</strong> ${otherData.target}%<br>
-                <strong>📈 Gap to Target:</strong> ${otherData.target - otherData.treeCover}%
+                <strong>Tree Cover:</strong> ${otherData.treeCover}%<br>
+                <strong>Target:</strong> ${otherData.target}%<br>
+                <strong>Gap to Target:</strong> ${otherData.target - otherData.treeCover}%
             `;
         } else {
             popupContent += `
@@ -680,14 +681,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <h4 style="margin: 0 0 10px 0; color: #333;">Tree Cover & Mission Priority</h4>
             
             <div style="margin-bottom: 10px;">
-                <strong>🎯 Mission Counties:</strong><br>
+                <strong> Mission Counties:</strong><br>
                 <i style="background: #8B0000; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> Critical Priority (0-5%)<br>
                 <i style="background: #FF4500; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> High Priority (5-9%)<br>
                 <i style="background: #FF8C00; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> Medium Priority (6-7%)<br>
             </div>
             
             <div>
-                <strong>🌳 Other Counties:</strong><br>
+                <strong>Other Counties:</strong><br>
                 <i style="background: #006400; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> 20%+ Tree Cover<br>
                 <i style="background: #66bb66; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> 10-20% Tree Cover<br>
                 <i style="background: #c2e699; width: 18px; height: 18px; display: inline-block; margin-right: 5px; border-radius: 3px;"></i> 5-10% Tree Cover<br>
@@ -710,11 +711,11 @@ document.addEventListener("DOMContentLoaded", function () {
         div.style.cssText = 'background: rgba(255, 255, 255, 0.95); padding: 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); max-width: 300px; font-size: 13px;';
         
         const criticalCount = Object.values(missionCounties).filter(c => c.priority === 'critical').length;
-        const highCount = Object.values(missionCounties).filter(c => c.priority === 'high')..length;
+        const highCount = Object.values(missionCounties).filter(c => c.priority === 'high').length;
         const avgTreeCover = (Object.values(missionCounties).reduce((sum, c) => sum + c.treeCover, 0) / Object.keys(missionCounties).length).toFixed(1);
         
         div.innerHTML = `
-            <h4 style="margin: 0 0 10px 0; color: #8B0000;">🎯 Mission Overview</h4>
+            <h4 style="margin: 0 0 10px 0; color: #8B0000;">Mission Overview</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 12px;">
                 <div style="text-align: center; padding: 8px; background: #fff3f3; border-radius: 4px;">
                     <div style="font-size: 16px; font-weight: bold; color: #8B0000;">${Object.keys(missionCounties).length}</div>
@@ -743,8 +744,8 @@ document.addEventListener("DOMContentLoaded", function () {
     L.control.layers(baseMaps, null, {collapsed: false}).addTo(map);
 
     // Add custom CSS for mission counties
-    var style = document.createElement('style');
-    style.textContent = `
+    var customStyleEl = document.createElement('style');
+    customStyleEl.textContent = `
         .mission-county {
             cursor: pointer !important;
         }
@@ -755,47 +756,9 @@ document.addEventListener("DOMContentLoaded", function () {
             font-size: 16px !important;
         }
     `;
-    document.head.appendChild(style);
-});
-  document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.counter');
+    document.head.appendChild(customStyleEl);
 
-    const options = {
-      threshold: 0.5
-    };
-
-    const startCounter = (counter) => {
-      const target = +counter.getAttribute('data-target');
-      const speed = 200;
-      const increment = target / speed;
-
-      const updateCount = () => {
-        const count = +counter.innerText;
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCount, 15);
-        } else {
-          counter.innerText = target;
-        }
-      };
-
-      updateCount();
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          startCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-
-    counters.forEach(counter => {
-      observer.observe(counter);
-    });
-  });
-document.addEventListener('DOMContentLoaded', () => {
+    // Impact counters initialization (runs within main DOMContentLoaded)
     const counters = document.querySelectorAll('.counter');
 
     const options = {
@@ -833,6 +796,81 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(counter);
     });
 });
+</script>
+
+<script>
+// Robust counter initializer independent from other scripts
+(function() {
+  function ready(fn) {
+    if (document.readyState !== 'loading') { fn(); }
+    else { document.addEventListener('DOMContentLoaded', fn); }
+  }
+
+  ready(function() {
+    const counters = Array.from(document.querySelectorAll('.counter'));
+    if (!counters.length) return;
+
+    const started = new WeakSet();
+
+    function inView(el) {
+      const rect = el.getBoundingClientRect();
+      const vh = (window.innerHeight || document.documentElement.clientHeight);
+      const vw = (window.innerWidth || document.documentElement.clientWidth);
+      if (rect.width === 0 && rect.height === 0) return false;
+      return (
+        rect.top < vh * 0.9 &&
+        rect.bottom > vh * 0.1 &&
+        rect.left < vw &&
+        rect.right > 0
+      );
+    }
+
+    function startCounter(counter) {
+      if (started.has(counter)) return;
+      started.add(counter);
+      const target = Number(counter.getAttribute('data-target')) || 0;
+      const duration = 1200; // ms
+      const frame = 16; // ~60fps
+      const steps = Math.max(1, Math.ceil(duration / frame));
+      const increment = target / steps;
+      let current = 0;
+
+      function tick() {
+        current += increment;
+        if (current < target) {
+          counter.textContent = String(Math.ceil(current));
+          setTimeout(tick, frame);
+        } else {
+          counter.textContent = String(target);
+        }
+      }
+      tick();
+    }
+
+    // IntersectionObserver when available
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) startCounter(entry.target);
+        });
+      }, { threshold: 0.2 });
+      counters.forEach(c => io.observe(c));
+    }
+
+    // Fallback: check on scroll/resize and once on load
+    function checkAll() {
+      counters.forEach(c => { if (inView(c)) startCounter(c); });
+    }
+    window.addEventListener('scroll', checkAll, { passive: true });
+    window.addEventListener('resize', checkAll);
+    // Kick once in case already visible
+    checkAll();
+    // Safety kickoffs in case observers don't fire due to layout/threshold timing
+    setTimeout(checkAll, 300);
+    // Force start as last resort after initial animations/layout settle
+    setTimeout(() => counters.forEach(c => startCounter(c)), 1500);
+  });
+})();
 </script>
 
 {% endblock %}

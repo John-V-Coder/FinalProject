@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Make a Donation | Green Future Society{% endblock title %}
+{% block title %}Donation{% endblock title %}
 
 {% block hero %}
 <div class="container-fluid bg-success text-white py-5 text-center shadow-lg">
@@ -27,7 +27,7 @@
 
         <div class="card bg-dark text-light shadow-lg border-success rounded-4">
           <div class="card-body p-4">
-            <h2 class="mb-4 text-success text-center">🌱 Donation Form</h2>
+            <h2 class="mb-4 text-success text-center"> Donation Form</h2>
 
             <form method="POST" action="{% url 'donate' %}" enctype="multipart/form-data" id="donationForm">
               {% csrf_token %}
