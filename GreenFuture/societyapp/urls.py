@@ -7,12 +7,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('',views.index, name='index'),
-    path('service/',views.service, name='Service'),
+    path('about-us/',views.about_us, name='about_us'),
     path('partners/', views.partners, name='partners'),
     path('green-campaign/', views.green_campaign, name='green_campaign'),
-    path('stories/', views.stories, name='stories'),
+    path('testimonials/', views.testimonials, name='testimonials'),
     path('events/', views.events, name='events'),
-    path('farming-academy/', views.farming_academy, name='farming_academy'),
+    path('green-hub/', views.farming_academy, name='farming_academy'),
     path('blog/',views.blog, name='blog'),
     path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
     path('contact/',views.contact, name='contact'),

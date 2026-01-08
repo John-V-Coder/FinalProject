@@ -47,11 +47,11 @@
 
           <ul>
             <li><a class="nav-link scrollto {% if request.path == '/' %}active{% endif %}" href="/">Home</a></li>
-            <li><a class="nav-link scrollto" href="/service">AboutUs</a></li>
+            <li><a class="nav-link scrollto" href="/about-us">AboutUs</a></li>
             <li><a class="nav-link scrollto" href="/green-campaign">Green Campaign</a></li>
-            <li><a class="nav-link scrollto" href="/farming-academy">Green Hub</a></li>
+            <li><a class="nav-link scrollto" href="/green-hub">Green Hub</a></li>
             <li><a class="nav-link scrollto" href="/events">Events</a></li>
-            <li><a class="nav-link scrollto" href="/stories">Testimonies</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'testimonials' %}">Testimonies</a></li>
             <li><a class="nav-link scrollto" href="/blog">Blog</a></li>
             <li><a class="nav-link scrollto" href="/donate">Donate</a></li>
             <li><a class="nav-link scrollto" href="/contact">Contact Us</a></li>
@@ -90,12 +90,12 @@
           <h5 class="text-success mb-3">Useful Links</h5>
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a href="/service" class="text-light small" style="text-decoration: none;">
+              <a href="/about-us" class="text-light small" style="text-decoration: none;">
                 About Us
               </a>
             </li>
             <li class="mb-2">
-              <a href="/stories" class="text-light small" style="text-decoration: none;">
+              <a href="{% url 'testimonials' %}" class="text-light small" style="text-decoration: none;">
                 Testimonies
               </a>
             </li>
@@ -115,7 +115,7 @@
           <h5 class="text-success mb-3">Explore Activities</h5>
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a href="/farming-academy" class="text-light small" style="text-decoration: none;">
+              <a href="/green-hub" class="text-light small" style="text-decoration: none;">
                 Green Hub
               </a>
             </li>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from societyapp.models import Contact, BlogPost, Donation, green_campaign, Event, FarmingCourse, stories
+from societyapp.models import Contact, BlogPost, Donation, green_campaign, Event, FarmingCourse, Testimonial
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from math import ceil
@@ -34,7 +34,7 @@ def contact(request):
         return render(request, "contact.html")   
     return render(request, "contact.html")
 
-def service(request):
+def about_us(request):
     return render(request, "service.html")
 
 def partners(request):
@@ -43,8 +43,9 @@ def partners(request):
 def green_campaign(request):
     return render(request, 'green_campaign.html')
 
-def stories(request):
-    return render(request, 'stories.html')
+def testimonials(request):
+    testimonials = Testimonial.objects.all()
+    return render(request, 'testimonials.html', {'testimonials': testimonials})
 
 def events(request):
     events = Event.objects.all().order_by('date')  # Optional: show events by date

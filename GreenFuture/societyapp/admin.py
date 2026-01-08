@@ -1,12 +1,12 @@
 from django.contrib import admin
-from societyapp.models import Contact, Donation, BlogPost, green_campaign, stories, Event
+from societyapp.models import Contact, Donation, BlogPost, green_campaign, Testimonial, Event
 # Register your models here.
 
 admin.site.register(Contact)
 admin.site.register(Donation)
 admin.site.register(BlogPost)
 admin.site.register(green_campaign)
-admin.site.register(stories)
+admin.site.register(Testimonial)
 admin.site.register(Event)
 
 

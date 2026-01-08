@@ -25,7 +25,7 @@ class green_campaign(models.Model):
     def __str__(self):
         return self.title
 
-class stories(models.Model):
+class Testimonial(models.Model):
     CATEGORY_CHOICES = [
         ('Woman', 'Woman'),
         ('Youth', 'Youth'),
